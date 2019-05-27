@@ -1,0 +1,20 @@
+spring:
+  jpa:
+    database: MYSQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+  datasource:
+    platform: mysql
+    url: jdbc:postgresql://dwennemar.de:8600/key-backup
+#Username && Password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  session:
+    store-type: jdbc
+    jdbc:
+      initialize-schema: always
+      schema: classpath:org/springframework/session/jdbc/schema-@@platform@@.sql
+      table-name: SPRING_SESSION
+server:
+  port: 8600
