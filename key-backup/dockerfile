@@ -1,0 +1,7 @@
+FROM openjdk:8-jdk-alpine
+
+VOLUME /tmp
+
+ADD /target/key-backup-0.0.1-SNAPSHOT.jar key-backup.jar
+
+ENTRYPOINT ["java", "-jar", "/key-backup.jar"]

@@ -1,0 +1,16 @@
+language: java
+
+before_script:
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
+script:
+  - cd ./data-access
+  - mvn test -B
+  - cd ../data-backup
+  - mvn test -B
+  - cd ../data-service
+  - mvn test -B
+  - cd ../key-backup
+  - mvn test -B
+  - cd ../key-service
+  - mvn test -B
